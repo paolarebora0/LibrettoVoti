@@ -4,13 +4,13 @@ import java.time.LocalDate;
 
 public class Voto {
 	private String corso;
-	private int voto;
+	private int punti;
 	private LocalDate data;
 	
 	public Voto(String corso, int voto, LocalDate data) {
 		super();
 		this.corso = corso;
-		this.voto = voto;
+		this.punti = voto;
 		this.data = data;
 	}
 	
@@ -20,11 +20,11 @@ public class Voto {
 	public void setCorso(String corso) {
 		this.corso = corso;
 	}
-	public int getVoto() {
-		return voto;
+	public int getPunti() {
+		return punti;
 	}
-	public void setVoto(int voto) {
-		this.voto = voto;
+	public void setPunti(int voto) {
+		this.punti = voto;
 	}
 	public LocalDate getData() {
 		return data;
@@ -35,7 +35,7 @@ public class Voto {
 
 	@Override
 	public String toString() {
-		return String.format("Voto [corso=%s, voto=%s, data=%s]", corso, voto, data);
+		return String.format("Voto [corso=%s, voto=%s, data=%s]", corso, punti, data);
 	}
 	
 	
