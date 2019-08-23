@@ -32,6 +32,11 @@ public class Voto {
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Voto [corso=%s, voto=%s, data=%s]", corso, voto, data);
+	}
 	
 	
 	
