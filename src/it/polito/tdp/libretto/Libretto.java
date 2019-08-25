@@ -24,8 +24,14 @@ public class Libretto {
 	 * 
 	 * @param v il {@link Voto} da aggiungere
 	 */
-	public void add(Voto v) {
-		voti.add(v);
+	public boolean add(Voto v) {
+		if(!this.esisteGiaVoto(v) && !this.votoConflitto(v)) {
+			voti.add(v);
+			return true;
+		}
+		else 
+			return false;
+			
 	}
 	
 //	public void StampaVoti(int voto) { //Stampa a video
@@ -89,7 +95,29 @@ public class Libretto {
 				
 	}
 	
+	/**
+	 * Mi dice se il {@link Voto} {@code v} e' in conflitto con uno dei
+	 * voti esistenti. Se il voto non esiste, non c'e' conflitto. Se
+	 * esiste ed ha il punteggio diverso c'e' conflitto
+	 * 
+	 * @param v
+	 * @return  {@code true} se il voto esiste ed ha un punteggio diverso,
+	 * 			{@code false} se il voto non esiste, oppure ha lo stesso 
+	 * 			punteggio
+	 */
+	public boolean votoConflitto(Voto v) {
+		
+		int pos = this.voti.indexOf(v);
+		if(pos==-1)
+			return false;
+		else 
+			return (v.getPunti()!=this.voti.get(pos).getPunti());
+			
+	}
 	
+	public String toString() {
+		return this.voti.toString();
+	}
 	
 	
 	
