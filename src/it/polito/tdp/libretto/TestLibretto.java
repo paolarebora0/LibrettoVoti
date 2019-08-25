@@ -53,6 +53,13 @@ public class TestLibretto {
 		System.out.println(libr.toString());
 		
 		
+		System.out.println("\n*** Migliora il libretto ***");
+		
+		Libretto migliore = libr.librettoMigliorato();
+		System.out.println(libr.toString());
+		System.out.println(migliore.toString());
+		
+		
 		
 
 	}

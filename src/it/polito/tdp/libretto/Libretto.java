@@ -119,6 +119,23 @@ public class Libretto {
 		return this.voti.toString();
 	}
 	
+	public Libretto librettoMigliorato() {
+		Libretto nuovo = new Libretto();		
+		for(Voto v: this.voti) {
+			nuovo.add(v.clone());
+		}		
+		for(Voto v: nuovo.voti) {
+			int punti = v.getPunti();
+			if(punti<24)
+				punti = punti + 1;
+			else if (punti <= 28)
+				punti = punti + 2;
+			
+			v.setPunti(punti);
+		}
+		return nuovo;
+		
+	}
 	
 	
 	
